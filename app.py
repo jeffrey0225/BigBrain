@@ -67,4 +67,4 @@ def update(id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True,port=8000,host='192.168.50.181')
+    app.run(debug=True)
