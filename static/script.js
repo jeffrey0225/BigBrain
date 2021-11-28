@@ -9,6 +9,6 @@ const httpRequest = (method,url) =>{
 
 
 var push = document.getElementById('push');
-push.addEventListener('click',httpRequest('POST','/'));
+push.addEventListener('click',httpRequest('POST','https://flaskjeffreymaster.herokuapp.com'));
 
 
