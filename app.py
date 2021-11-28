@@ -18,6 +18,8 @@ class Todo(db.Model):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
+        coco = request.form['coco']
+        print(coco)
         task_content = request.form['content']
         new_task = Todo(content=task_content)
 
