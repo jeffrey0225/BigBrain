@@ -6,9 +6,13 @@
 
 {% block body %}
 <div class="content">
-    <h1 style="text-align: center">Task Master</h1>
+    <div class="title-box">
+        <h1>Task Master</h1>
+    </div>
     {% if tasks|length < 1 %}
-    <h4 style="text-align: center">There are no tasks. Create one below!</h4>
+    <div class="row col-sm-12">
+        <h4 style="text-align: center">There are no tasks. Create one below!</h4>    
+    </div>
     {% else %}
     <table>
         <tr>
@@ -37,5 +41,6 @@
         </form>
     </div>
 
+    <button id="push">簡俊喆</button>
 </div>
 {% endblock %}

@@ -8,7 +8,10 @@ body, html {
     margin: 0 auto;
     width: 400px;
 }
-
+.title-box{
+    text-align: center;
+    padding: 10px 20px;
+}
 table, td, th {
     border: 1px solid #aaa;
 }

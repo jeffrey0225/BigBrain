@@ -1,3 +1,4 @@
+from typing import Text
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -18,7 +19,8 @@ class Todo(db.Model):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        
+        monkey = request.get_json()
+        print(monkey)
         task_content = request.form['content']
         new_task = Todo(content=task_content)
 
@@ -63,4 +65,4 @@ def update(id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host='172.20.10.2',port=8000)
