@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>BIG BRAIN CURTAIN</title>
+{% endblock %}
+
+{% block body %}
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <h1 class="logo"><a href="/">Big Brain<span>.</span></a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link" href="/light_html">LIGHT</a></li>
+        <li><a class="nav-link" href="#">CURTAIN</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+  </div>
+</header><!-- End Header -->
+
+<main>
+  <div class="container py-4" data-aos="zoom-out" data-aos-delay="100">
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-3">
+        <h1 class="display-5 fw-bold">Intelligent Curtain</h1>
+        <p class="col-md-8 fs-4">You can easily control your furniture with your phone.
+          <br>
+          Let's make your life more convenient.
+        </p>
+      </div>
+    </div>
+
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Change the Statement</h2>
+          <br>
+          <p>Change the state of the curtains to cope with the rain or the sunshine</p>
+          <br>
+          <div class="row">
+            <div class="col-6"><button class="btn btn-outline-light" type="button" id="open">Open it!</button></div>
+            <div class="col-6"><button class="btn btn-outline-light" type="button" id="close">Close it!</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <h2>With Atmosphere Light</h2>
+          <br>
+          <p>Just use the buttons to make it work !</p>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-6"><button class="btn btn-outline-secondary" type="button" id="woke">Woke up</button></div>
+            <div class="col-6"><button class="btn btn-outline-secondary" type="button" id="bed">Go to bed</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="pt-3 mt-4 text-muted border-top">
+      &copy; 2022
+    </footer>
+  </div>
+</main>
+
+<script src="{{ url_for('static', filename='script_curtain.js') }}"></script>
+
+
+{% endblock %}

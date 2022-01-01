@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>BIG BRAIN LIGHT</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='slider_1.css') }}">
+{% endblock %}
+
+{% block body %}
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <h1 class="logo"><a href="/">Big Brain<span>.</span></a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link" href="#">LIGHT</a></li>
+        <li><a class="nav-link" href="/curtain_html">CURTAIN</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+
+  </div>
+</header><!-- End Header -->
+
+<main>
+  <div class="container py-4" data-aos="zoom-out" data-aos-delay="100">
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Atmosphere Light</h1>
+        <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+        <div class="brightness">
+          <div class="field bg-light">
+            <label class="text-label">Text label</label>
+            <div class="inputslider" data-value="40" data-unit="%" data-values="20,25,30,35,40,45,50">
+              <input type="text" name="input" autocomplete="off" readonly="">
+              <div class="values"><span data-value="20" class="selected" style="left: 0%;">20%</span><span data-value="25" style="left: 16.6667%;">25%</span><span data-value="30" style="left: 33.3333%;">30%</span><span data-value="35" style="left: 50%;">35%</span><span data-value="40" style="left: 66.6667%;">40%</span><span data-value="45" style="left: 83.3333%;">45%</span><span data-value="50" style="left: 100%;">50%</span></div>
+              <div class="area">
+                <div class="track"></div>
+                <div class="fill"></div>
+                <div class="knob" style="touch-action: pan-y; cursor: grab; user-select: none;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Change the background</h2>
+          <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
+          <button class="btn btn-outline-light" type="button">Example button</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <h2>Add borders</h2>
+          <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+          <button class="btn btn-outline-secondary" type="button">Example button</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="pt-3 mt-4 text-muted border-top">
+      &copy; 2022
+    </footer>
+  </div>
+</main>
+
+<script src="{{ url_for('static', filename='script_light.js') }}"></script>
+{% endblock %}
