@@ -85,4 +85,4 @@ def ligth_html():
 
 
 # 執行網站
-app.run(debug=True,host='0.0.0.0',port=8000)
+app.run(debug=True)
