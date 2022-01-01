@@ -4,10 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex, nofollow">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <!-- Brightness slider CSS -->
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+     <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Vendor CSS Files -->
+    <link href="https://bootstrapmade.com/demo/templates/BizLand/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="https://bootstrapmade.com/demo/templates/BizLand/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://bootstrapmade.com/demo/templates/BizLand/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://bootstrapmade.com/demo/templates/BizLand/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://bootstrapmade.com/demo/templates/BizLand/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="https://bootstrapmade.com/demo/templates/BizLand/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="https://bootstrapmade.com/demo/templates/BizLand/assets/css/style.css" rel="stylesheet">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
     {% block head %}{% endblock %}
 </head>
-<body>
+<body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0"  translate="no">
     {% block body %}{% endblock %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Vendor JS Files -->
+  <script src="https://bootstrapmade.com/demo/templates/BizLand/assets/vendor/purecounter/purecounter.js"></script>
+  <script src="https://bootstrapmade.com/demo/templates/BizLand/assets/vendor/aos/aos.js"></script>
+  <script src="https://bootstrapmade.com/demo/templates/BizLand/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://bootstrapmade.com/demo/templates/BizLand/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="https://bootstrapmade.com/demo/templates/BizLand/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://bootstrapmade.com/demo/templates/BizLand/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://bootstrapmade.com/demo/templates/BizLand/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="https://bootstrapmade.com/demo/templates/BizLand/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="https://bootstrapmade.com/demo/templates/BizLand/assets/js/main.js"></script>
+  <script>
+    if( window.self == window.top ) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-55234356-4', 'auto'); ga('send', 'pageview'); } 
+  </script>
+  
+  <!-- Brightness slider JS -->
+  <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/Draggable.min.js"></script>
+ 
 </body>
 </html>
