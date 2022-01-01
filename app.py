@@ -21,7 +21,6 @@ class Todo(db.Model):
 
 
 @app.route('/', methods=['POST', 'GET'])
-@cross_origin()
 def index():
     if request.method == 'POST':
         # monkey = request.get_json()
