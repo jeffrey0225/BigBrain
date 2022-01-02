@@ -6,6 +6,7 @@ from flask import Flask, render_template, url_for, request, redirect
 
 
 app = Flask(__name__)
+
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 # db = SQLAlchemy(app)
 
@@ -51,8 +52,11 @@ def ligth():
 # 窗簾動作
 @app.route('/curtain', methods=['GET', 'POST'])
 def curtain():
+    
+    
     if request.get_json() != None:
         state = request.get_json()
+
     if request.method == 'POST':
         print(request.get_json())
         print('to curtain')
@@ -62,6 +66,8 @@ def curtain():
         if state == 2:
             print('close')
             return '2'
+        else:
+            return '123'
     else:
         return 'nothing happens'
 
@@ -84,5 +90,4 @@ def ligth_html():
 
 
 # 執行網站
-if __name__ == "__main__":
-    app.run(debug=True)
+app.run(debug=True,host='172.20.10.2',port=8000)
