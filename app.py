@@ -3,7 +3,7 @@ from flask import Flask, render_template, url_for, request, redirect
 # from flask_sqlalchemy import SQLAlchemy
 # from datetime import datetime
 
-
+state = 2
 
 app = Flask(__name__)
 
@@ -52,7 +52,7 @@ def ligth():
 # 窗簾動作
 @app.route('/curtain', methods=['GET', 'POST'])
 def curtain():
-    
+    global state
     
     if request.get_json() != None:
         state = request.get_json()
@@ -90,4 +90,4 @@ def ligth_html():
 
 
 # 執行網站
-app.run(debug=True,host='0.0.0.0',port=8000)
+app.run(debug=True)
