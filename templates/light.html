@@ -32,16 +32,25 @@
       <div class="container-fluid py-5">
         <h1 class="display-5 fw-bold">Atmosphere Light</h1>
         <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+
         <div class="brightness">
-          <div class="field bg-light">
-            <label class="text-label">Text label</label>
-            <div class="inputslider" data-value="40" data-unit="%" data-values="20,25,30,35,40,45,50">
+          <div class="field">
+            <label class="text-label">Brightness</label>
+            <div class="inputslider" data-value="40" data-unit="%" data-values="20,30,40,50,60,70,80">
               <input type="text" name="input" autocomplete="off" readonly="">
-              <div class="values"><span data-value="20" class="selected" style="left: 0%;">20%</span><span data-value="25" style="left: 16.6667%;">25%</span><span data-value="30" style="left: 33.3333%;">30%</span><span data-value="35" style="left: 50%;">35%</span><span data-value="40" style="left: 66.6667%;">40%</span><span data-value="45" style="left: 83.3333%;">45%</span><span data-value="50" style="left: 100%;">50%</span></div>
+              <div class="values">
+                <span data-value="20" class="selected" style="left: 0%;"></span>
+                <span data-value="30" style="left: 16.6667%;" class=""></span>
+                <span data-value="40" style="left: 33.3333%;" class=""></span>
+                <span data-value="50" style="left: 50%;" class=""></span>
+                <span data-value="60" style="left: 66.6667%;" class=""></span>
+                <span data-value="70" style="left: 83.3333%;" class=""></span>
+                <span data-value="80" style="left: 100%;" class=""></span>
+              </div>
               <div class="area">
                 <div class="track"></div>
-                <div class="fill"></div>
-                <div class="knob" style="touch-action: pan-y; cursor: grab; user-select: none;"></div>
+                <div class="fill" style="width: 0%;"></div>
+                <div class="knob" style="touch-action: pan-y; cursor: grab; user-select: none; z-index: 1004; transform: translate3d(0px, 0px, 0px);"></div>
               </div>
             </div>
           </div>
@@ -73,5 +82,9 @@
   </div>
 </main>
 
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/Draggable.min.js"></script>
 <script src="{{ url_for('static', filename='script_light.js') }}"></script>
+
 {% endblock %}
