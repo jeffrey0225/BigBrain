@@ -1,3 +1,11 @@
+// btn id
+var open_1 = document.getElementById('open');
+var close_1 = document.getElementById('close');
+var party = document.getElementById('party');
+var sleep = document.getElementById('sleep');
+var study = document.getElementById('study');
+var relax = document.getElementById('relax');
+
 // slider_1
 Element.prototype.addClass = function (className)
 {
@@ -130,7 +138,9 @@ for(let i=start_r;i<=end_r;i+=step_r){
 rangeInput_r.addEventListener("input",function(){
   let top = parseFloat(rangeInput_r.value)/step_r * -40;
   rangeValue_r.style.marginTop = top+"px";
+  console.log(rangeInput_r.value);
 });
+
 
 //slider_g
 let rangeInput_g = document.querySelector(".green .range-input input");
@@ -165,3 +175,49 @@ rangeInput_b.addEventListener("input",function(){
   let top = parseFloat(rangeInput_b.value)/step_b * -40;
   rangeValue_b.style.marginTop = top+"px";
 });
+
+
+// http 
+const sendHttpRequest = (method, url, data) => {
+  const xhr = new XMLHttpRequest();
+  xhr.open(method, url, true);
+
+  xhr.responseType = 'json';
+  
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  
+  xhr.send(JSON.stringify(data));
+  
+};
+
+const sendData_open = () => {
+  sendHttpRequest('POST', '/light', 1, {
+  })
+};
+const sendData_close = () => {
+  sendHttpRequest('POST', '/light', 2, {
+  })
+};
+const sendData_party = () => {
+  sendHttpRequest('POST', '/light', 3, {
+  })
+};
+const sendData_sleep = () => {
+  sendHttpRequest('POST', '/light', 4, {
+  })
+};
+const sendData_study = () => {
+  sendHttpRequest('POST', '/light', 5, {
+  })
+};
+const sendData_relax = () => {
+  sendHttpRequest('POST', '/light', 6, {
+  })
+};
+
+open_1.addEventListener('click', sendData_open);
+close_1.addEventListener('click', sendData_close);
+party.addEventListener('click', sendData_party);
+sleep.addEventListener('click', sendData_sleep);
+study.addEventListener('click', sendData_study);
+relax.addEventListener('click', sendData_relax);

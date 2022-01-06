@@ -32,43 +32,54 @@
     <div class="p-3 mb-4 bg-light rounded-3">
       <div class="container-fluid py-5">
         <h1 class="display-5 fw-bold">Atmosphere Light</h1>
-        <p class="col-md-8 fs-4">Once you want to be an atmosphere controller maybe you can try this</p>
+        <p class="col-md-8 fs-4">Create a unique style, create the ultimate elegance in your home, and make your life change.</p>
         <br>
-        <div class="brightness">
-          <div class="field">
-            <label class="text-label">Brightness</label>
-            <div class="inputslider" data-value="40" data-unit="%" data-values="30,40,50,60,70,80,90">
-              <input type="text" name="input" autocomplete="off" readonly="">
-              <div class="values">
-                <span data-value="30" class="selected" style="left: 0%;"></span>
-                <span data-value="40" style="left: 16.6667%;" class=""></span>
-                <span data-value="50" style="left: 33.3333%;" class=""></span>
-                <span data-value="60" style="left: 50%;" class=""></span>
-                <span data-value="70" style="left: 66.6667%;" class=""></span>
-                <span data-value="80" style="left: 83.3333%;" class=""></span>
-                <span data-value="90" style="left: 100%;" class=""></span>
-              </div>
-              <div class="area">
-                <div class="track"></div>
-                <div class="fill" style="width: 0%;"></div>
-                <div class="knob" style="touch-action: pan-y; cursor: grab; user-select: none; z-index: 1004; transform: translate3d(0px, 0px, 0px);"></div>
+        <div class="row">
+          <div class="col-sm-12 col-md-8">
+            <div class="brightness">
+              <div class="field">
+                <label class="text-label">Brightness</label>
+                <div class="inputslider" data-value="40" data-unit="%" data-values="30,40,50,60,70,80,90">
+                  <input type="text" name="input" autocomplete="off" readonly="">
+                  <div class="values">
+                    <span data-value="30" class="selected" style="left: 0%;"></span>
+                    <span data-value="40" style="left: 16.6667%;" class=""></span>
+                    <span data-value="50" style="left: 33.3333%;" class=""></span>
+                    <span data-value="60" style="left: 50%;" class=""></span>
+                    <span data-value="70" style="left: 66.6667%;" class=""></span>
+                    <span data-value="80" style="left: 83.3333%;" class=""></span>
+                    <span data-value="90" style="left: 100%;" class=""></span>
+                  </div>
+                  <div class="area">
+                    <div class="track"></div>
+                    <div class="fill" style="width: 0%;"></div>
+                    <div class="knob" style="touch-action: pan-y; cursor: grab; user-select: none; z-index: 1004; transform: translate3d(0px, 0px, 0px);"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <div class="col-sm-12 col-md-4" style="margin-top: 50px;">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-outline-secondary" id="open">ON</button>
+              <button type="button" class="btn btn-outline-secondary" id="close">OFF</button>
+            </div>
+          </div>
         </div>
+        
         
       </div>
     </div>
 
     <div class="row align-items-md-stretch">
       <div class="col-md-6">
-        <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <div class="h-100 p-4 text-white bg-dark rounded-3">
           <h2>Change the color</h2>
           <p>Change the value of rgb to change the color.</p>
           <br>
           <div class="red">
             <div class="range-input">
-            <input type="range" min="0" max="256" value="0" step="1">
+            <input type="range" min="0" max="256" value="0" step="1" id="slider_r">
             <div class="value">
               <div></div>
             </div>
@@ -95,10 +106,26 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div class="h-100 p-5 bg-light border rounded-3">
-          <h2>Add borders</h2>
-          <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
-          <button class="btn btn-outline-secondary" type="button">Example button</button>
+        <div class="h-100 p-4 bg-light border rounded-3">
+          <h2>Mode</h2>
+          <p>Choose the mode to make atmosphere better.</p>
+          <div class="row mt-5">
+            <div class="col-6">
+              <button class="btn btn-outline-secondary" type="button" id="party">Party</button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-outline-secondary" type="button" id="sleep">Sleep</button>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-6">
+              <button class="btn btn-outline-secondary" type="button" id="study">Study</button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-outline-secondary" type="button" id="relax">Relax</button>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>

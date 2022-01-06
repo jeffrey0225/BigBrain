@@ -2,11 +2,13 @@
 from flask import Flask, render_template, url_for, request, redirect
 # from flask_sqlalchemy import SQLAlchemy
 # from datetime import datetime
+from flask_cors import CORS
 
-state = 2
+state_curtain = 2
+state_light = 1
 
 app = Flask(__name__)
-
+CORS(app)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 # db = SQLAlchemy(app)
 
@@ -42,28 +44,53 @@ def index():
 
 #  氣氛燈
 @app.route('/light', methods=['GET', 'POST'])
-def ligth():
+def light():
+    global state_light
+
+    if request.get_json() != None:
+        state_light = request.get_json()
 
     if request.method == 'POST':
-        return '32'
+        print(request.get_json())
+        print('to light')
+        if state_light == 1:
+            print('open')
+            return '1'
+        if state_light == 2:
+            print('close')
+            return '2'
+        if state_light == 3:
+            print('party')
+            return '3'
+        if state_light == 4:
+            print('sleep')
+            return '4'
+        if state_light == 5:
+            print('study')
+            return '5'
+        if state_light == 6:
+            print('relax')
+            return '6'
+        else:
+            return '123'
     else:
-        return render_template('light.html')
+        return 'nothing happens'
 
 # 窗簾動作
 @app.route('/curtain', methods=['GET', 'POST'])
 def curtain():
-    global state
+    global state_curtain
     
     if request.get_json() != None:
-        state = request.get_json()
+        state_curtain = request.get_json()
 
     if request.method == 'POST':
         print(request.get_json())
         print('to curtain')
-        if state == 1:
+        if state_curtain == 1:
             print('open')
             return '1'
-        if state == 2:
+        if state_curtain == 2:
             print('close')
             return '2'
         else:
@@ -81,7 +108,7 @@ def curtain_html():
         return render_template('curtain.html')
 
 @app.route('/light_html', methods=['GET', 'POST'])
-def ligth_html():
+def light_html():
 
     if request.method == 'POST':
         return '32'
@@ -91,4 +118,4 @@ def ligth_html():
 
 # 執行網站
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0',port=8000)
