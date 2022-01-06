@@ -4,6 +4,9 @@ from flask import Flask, render_template, url_for, request, redirect
 # from datetime import datetime
 from flask_cors import CORS
 
+red = 0
+green = 0
+blue = 0
 state_curtain = 2
 state_light = 1
 
@@ -52,7 +55,6 @@ def light():
 
     if request.method == 'POST':
         print(request.get_json())
-        print('to light')
         if state_light == 1:
             print('open')
             return '1'
@@ -72,9 +74,52 @@ def light():
             print('relax')
             return '6'
         else:
-            return '123'
+            print('color is changing')
+            return state_light
     else:
         return 'nothing happens'
+# color
+@app.route('/red', methods=['GET', 'POST'])
+def red_0():
+    global red
+    if request.get_json() != None:
+        red = request.get_json()
+        print(red)
+        return "John China"
+    else:
+        return "nothing"
+
+@app.route('/green', methods=['GET', 'POST'])
+def green_0():
+    global green
+    if request.get_json() != None:
+        green = request.get_json()
+        print(green)
+        return "John China"
+    else:
+        return "nothing"
+
+@app.route('/blue', methods=['GET', 'POST'])
+def blue_0():
+    global blue
+    if request.get_json() != None:
+        blue = request.get_json()
+        print(blue)
+        return "John China"
+    else:
+        return "nothing"
+
+@app.route('/color', methods=['GET', 'POST'])
+def color():
+    global red
+    global blue
+    global green
+    if request.method == 'POST':
+        color = red + "," + green + "," + blue
+        print(color)
+        return color
+    else:
+        return 'John China'   
 
 # 窗簾動作
 @app.route('/curtain', methods=['GET', 'POST'])
@@ -86,7 +131,6 @@ def curtain():
 
     if request.method == 'POST':
         print(request.get_json())
-        print('to curtain')
         if state_curtain == 1:
             print('open')
             return '1'
@@ -118,4 +162,4 @@ def light_html():
 
 # 執行網站
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0',port=8000)

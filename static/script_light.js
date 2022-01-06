@@ -123,6 +123,20 @@ function handleInputslider(instance, snap)
   }
 }
 
+//-------------------------------------------------------------
+
+const sliderHttpRequest = (method, url, data) => {
+  const slider_http = new XMLHttpRequest();
+  slider_http.open(method, url, true);
+
+  slider_http.responseType = 'json';
+  
+  slider_http.setRequestHeader('Content-Type', 'application/json');
+  
+  slider_http.send(JSON.stringify(data));
+  
+};
+
 // slider_r
 let rangeInput_r = document.querySelector(".red .range-input input");
 let rangeValue_r = document.querySelector(".red .range-input .value div");
@@ -138,9 +152,16 @@ for(let i=start_r;i<=end_r;i+=step_r){
 rangeInput_r.addEventListener("input",function(){
   let top = parseFloat(rangeInput_r.value)/step_r * -40;
   rangeValue_r.style.marginTop = top+"px";
-  console.log(rangeInput_r.value);
-});
+  console.log((rangeInput_r.value) + "," + (rangeInput_g.value) + "," + (rangeInput_b.value));
+  const slider_red = new XMLHttpRequest();
+  slider_red.open('POST', '/red', true);
 
+  slider_red.responseType = 'json';
+  
+  slider_red.setRequestHeader('Content-Type', 'application/json');
+  
+  slider_red.send(JSON.stringify(rangeInput_r.value));
+});
 
 //slider_g
 let rangeInput_g = document.querySelector(".green .range-input input");
@@ -157,6 +178,15 @@ for(let i=start_g;i<=end_g;i+=step_g){
 rangeInput_g.addEventListener("input",function(){
   let top = parseFloat(rangeInput_g.value)/step_g * -40;
   rangeValue_g.style.marginTop = top+"px";
+  console.log((rangeInput_r.value) + "," + (rangeInput_g.value) + "," + (rangeInput_b.value));
+  const slider_green = new XMLHttpRequest();
+  slider_green.open('POST', '/green', true);
+
+  slider_green.responseType = 'json';
+  
+  slider_green.setRequestHeader('Content-Type', 'application/json');
+  
+  slider_green.send(JSON.stringify(rangeInput_g.value));
 });
 
 //slider_b
@@ -174,10 +204,18 @@ for(let i=start_b;i<=end_b;i+=step_b){
 rangeInput_b.addEventListener("input",function(){
   let top = parseFloat(rangeInput_b.value)/step_b * -40;
   rangeValue_b.style.marginTop = top+"px";
+  console.log((rangeInput_r.value) + "," + (rangeInput_g.value) + "," + (rangeInput_b.value));
+  const slider_blue = new XMLHttpRequest();
+  slider_blue.open('POST', '/blue', true);
+
+  slider_blue.responseType = 'json';
+  
+  slider_blue.setRequestHeader('Content-Type', 'application/json');
+  slider_blue.send(JSON.stringify(rangeInput_b.value));
+  
 });
 
-
-// http 
+// http-button
 const sendHttpRequest = (method, url, data) => {
   const xhr = new XMLHttpRequest();
   xhr.open(method, url, true);
@@ -211,7 +249,7 @@ const sendData_study = () => {
   })
 };
 const sendData_relax = () => {
-  sendHttpRequest('POST', '/light', 6, {
+  sendHttpRequest('POST', '/color', 6, {
   })
 };
 
