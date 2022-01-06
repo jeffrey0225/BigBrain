@@ -6,6 +6,7 @@ var sleep = document.getElementById('sleep');
 var study = document.getElementById('study');
 var relax = document.getElementById('relax');
 
+
 // slider_1
 Element.prototype.addClass = function (className)
 {

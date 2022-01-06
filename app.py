@@ -1,7 +1,4 @@
-# from typing import Text
-from flask import Flask, render_template, url_for, request, redirect
-# from flask_sqlalchemy import SQLAlchemy
-# from datetime import datetime
+from flask import Flask, render_template, request
 from flask_cors import CORS
 
 red = 0
@@ -12,37 +9,13 @@ state_light = 1
 
 app = Flask(__name__)
 CORS(app)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-# db = SQLAlchemy(app)
 
-
-
-# class Todo(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     content = db.Column(db.String(200), nullable=False)
-#     date_created = db.Column(db.DateTime, default=datetime.utcnow)
-
-#     def __repr__(self):
-#         return '<Task %r>' % self.id
-
-
+# 首頁
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        # monkey = request.get_json()
-        # print(monkey)
-        # task_content = request.form['content']
-        # new_task = Todo(content=task_content)
-
-        # try:
-        #     db.session.add(new_task)
-        #     db.session.commit()
-        #     return redirect('/')
-        # except:
-        #     return 'There was an issue adding your task'
         return '123456'
     else:
-        # tasks = Todo.query.order_by(Todo.date_created).all()
         return render_template('index.html')
 
 #  氣氛燈
@@ -162,4 +135,4 @@ def light_html():
 
 # 執行網站
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0',port=8000)
