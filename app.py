@@ -1,14 +1,17 @@
 from flask import Flask, render_template, request
 from flask_cors import CORS
 
+
 red = 0
 green = 0
 blue = 0
+brightness = 0
 state_curtain = 2
 state_light = 1
 
 app = Flask(__name__)
 CORS(app)
+    
 
 # 首頁
 @app.route('/', methods=['POST', 'GET'])
@@ -51,6 +54,16 @@ def light():
             return state_light
     else:
         return 'nothing happens'
+# brightness
+@app.route('/brightness', methods=['GET', 'POST'])
+def brightness_0():
+    global brightness
+    if request.get_json() != None:
+        brightness = request.get_json()
+        print(brightness)
+        return "John China"
+    else:
+        return "nothing"
 # color
 @app.route('/red', methods=['GET', 'POST'])
 def red_0():
@@ -58,6 +71,7 @@ def red_0():
     if request.get_json() != None:
         red = request.get_json()
         print(red)
+        
         return "John China"
     else:
         return "nothing"
@@ -84,11 +98,9 @@ def blue_0():
 
 @app.route('/color', methods=['GET', 'POST'])
 def color():
-    global red
-    global blue
-    global green
+    global red, blue, green, brightness
     if request.method == 'POST':
-        color = red + "," + green + "," + blue
+        color = red + "," + green + "," + blue + "," + brightness
         print(color)
         return color
     else:
@@ -126,13 +138,15 @@ def curtain_html():
 
 @app.route('/light_html', methods=['GET', 'POST'])
 def light_html():
+    global red, green, blue, brightness
 
     if request.method == 'POST':
         return '32'
     else:
-        return render_template('light.html')
+        
+        return render_template('light.html',red=red,green=green,blue=blue,brightness=brightness)
 
 
 # 執行網站
 if __name__ == "__main__":
-    app.run(debug=True,host='0.0.0.0',port=8000)
+    app.run(debug=True)
