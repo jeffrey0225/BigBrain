@@ -35,7 +35,7 @@ for(let i=start_bts;i<=end_bts;i+=step_bts){
 
 rangeInput_bts.addEventListener("input",function(){
   let top = parseFloat(rangeInput_bts.value)/step_bts * -40;
-  rangeValue_bts.style.marginTop = top+"px";
+  rangeValue_bts.style.marginTop = (top-40)+"px";
   const slider_brightness = new XMLHttpRequest();
   slider_brightness.open('POST', '/brightness', true);
 
@@ -61,7 +61,7 @@ for(let i=start_r;i<=end_r;i+=step_r){
 
 rangeInput_r.addEventListener("input",function(){
   let top = parseFloat(rangeInput_r.value)/step_r * -40;
-  rangeValue_r.style.marginTop = top+"px";
+  rangeValue_r.style.marginTop = (top-40)+"px";
   const slider_red = new XMLHttpRequest();
   slider_red.open('POST', '/red', true);
 
@@ -85,8 +85,9 @@ for(let i=start_g;i<=end_g;i+=step_g){
 }
 
 rangeInput_g.addEventListener("input",function(){
+  
   let top = parseFloat(rangeInput_g.value)/step_g * -40;
-  rangeValue_g.style.marginTop = top+"px";
+  rangeValue_g.style.marginTop = (top-40)+"px";
   const slider_green = new XMLHttpRequest();
   slider_green.open('POST', '/green', true);
 
@@ -105,14 +106,13 @@ let start_b = parseFloat(rangeInput_b.min);
 let end_b = parseFloat(rangeInput_b.max);
 let step_b = parseFloat(rangeInput_b.step);
 
-rangeValue_b.innerHTML += '<div>'+rangeInput_b.value+'</div>';
 for(let i=start_b;i<=end_b;i+=step_b){
   rangeValue_b.innerHTML += '<div>'+i+'</div>';
 }
 
 rangeInput_b.addEventListener("input",function(){
   let top = parseFloat(rangeInput_b.value)/step_b * -40;
-  rangeValue_b.style.marginTop = top+"px";
+  rangeValue_b.style.marginTop = (top-40)+"px";
 
   const slider_blue = new XMLHttpRequest();
   slider_blue.open('POST', '/blue', true);

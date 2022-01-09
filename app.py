@@ -51,7 +51,7 @@ def light():
             return '6'
         else:
             print('color is changing')
-            return state_light
+            return "John China"
     else:
         return 'nothing happens'
 # brightness
@@ -98,11 +98,9 @@ def blue_0():
 
 @app.route('/color', methods=['GET', 'POST'])
 def color():
-    global red, blue, green, brightness
+    global red, blue, green, brightness, state_light
     if request.method == 'POST':
-        color = red + "," + green + "," + blue + "," + brightness
-        print(color)
-        return color
+        return str(state_light) + "," + str(red) + "," + str(green) + "," + str(blue) + "," + str(brightness)
     else:
         return 'John China'   
 
@@ -149,4 +147,4 @@ def light_html():
 
 # 執行網站
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host="0.0.0.0",port=8000)
