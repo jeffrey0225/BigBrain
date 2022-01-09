@@ -8,10 +8,10 @@ blue = 0
 brightness = 0
 state_curtain = 2
 state_light = 1
-bb = 1000
-rr = 1000
-gg = 1000
-brbr = 1000
+bb = 0
+rr = 0
+gg = 0
+brbr = 0
 
 app = Flask(__name__)
 CORS(app)
@@ -64,7 +64,7 @@ def brightness_0():
     global brightness, brbr
     if request.get_json() != None:
         brightness = request.get_json()
-        brbr += int(brightness)
+        brbr = int(brightness) + 1000
         print(brbr)
         return "John China"
     else:
@@ -75,7 +75,7 @@ def red_0():
     global red, rr
     if request.get_json() != None:
         red = request.get_json()
-        rr += int(red)
+        rr = int(red) + 1000
         print(int(rr))
         
         return "John China"
@@ -87,7 +87,7 @@ def green_0():
     global green, gg
     if request.get_json() != None:
         green = request.get_json()
-        gg += int(green)
+        gg = int(green) + 1000
         print(gg)
         return "John China"
     else:
@@ -98,7 +98,7 @@ def blue_0():
     global blue, bb
     if request.get_json() != None:
         blue = request.get_json()
-        bb += int(blue)
+        bb = int(blue) + 1000
         print(bb)
         return "John China"
     else:
