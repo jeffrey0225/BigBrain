@@ -26,13 +26,13 @@ const sendData_close = () => {
 const sendData_woke = () => {
     sendHttpRequest('POST', '/curtain', 1, {
     })
-    sendHttpRequest('POST', '/light', 5, {
+    sendHttpRequest('POST', '/light', 1, {
     })
 };
 const sendData_bed = () => {
     sendHttpRequest('POST', '/curtain', 2, {
     })
-    sendHttpRequest('POST', '/light', 6, {
+    sendHttpRequest('POST', '/light', 4, {
     })
 };
 
