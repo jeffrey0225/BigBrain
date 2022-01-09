@@ -117,7 +117,7 @@ rangeInput_b.addEventListener("input",function(){
   const slider_blue = new XMLHttpRequest();
   slider_blue.open('POST', '/blue', true);
 
-  slider_blue.responseType = 'json';
+  slider_blue.responseType = 'json'
   
   slider_blue.setRequestHeader('Content-Type', 'application/json');
   slider_blue.send(JSON.stringify(rangeInput_b.value));

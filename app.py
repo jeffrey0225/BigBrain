@@ -8,6 +8,10 @@ blue = 0
 brightness = 0
 state_curtain = 2
 state_light = 1
+bb = 0
+rr = 0
+gg = 0
+brbr = 0
 
 app = Flask(__name__)
 CORS(app)
@@ -57,20 +61,22 @@ def light():
 # brightness
 @app.route('/brightness', methods=['GET', 'POST'])
 def brightness_0():
-    global brightness
+    global brightness, brbr
     if request.get_json() != None:
         brightness = request.get_json()
-        print(brightness)
+        brbr = int(brightness) + 1000
+        print(brbr)
         return "John China"
     else:
         return "nothing"
 # color
 @app.route('/red', methods=['GET', 'POST'])
 def red_0():
-    global red
+    global red, rr
     if request.get_json() != None:
         red = request.get_json()
-        print(red)
+        rr = int(red) + 1000
+        print(int(rr))
         
         return "John China"
     else:
@@ -78,29 +84,33 @@ def red_0():
 
 @app.route('/green', methods=['GET', 'POST'])
 def green_0():
-    global green
+    global green, gg
     if request.get_json() != None:
         green = request.get_json()
-        print(green)
+        gg = int(green) + 1000
+        print(gg)
         return "John China"
     else:
         return "nothing"
 
 @app.route('/blue', methods=['GET', 'POST'])
 def blue_0():
-    global blue
+    global blue, bb
     if request.get_json() != None:
         blue = request.get_json()
-        print(blue)
+        bb = int(blue) + 1000
+        print(bb)
         return "John China"
     else:
         return "nothing"
 
 @app.route('/color', methods=['GET', 'POST'])
 def color():
-    global red, blue, green, brightness, state_light
+    global brbr, rr, gg, bb, state_light
     if request.method == 'POST':
-        return str(state_light) + "," + str(red) + "," + str(green) + "," + str(blue) + "," + str(brightness)
+        
+        print(str(state_light) + "," + str(rr) + "," + str(gg) + "," + str(bb) + "," + str(brbr))
+        return str(state_light) + "," + str(rr) + "," + str(gg) + "," + str(bb) + "," + str(brbr)
     else:
         return 'John China'   
 
@@ -147,4 +157,4 @@ def light_html():
 
 # 執行網站
 if __name__ == "__main__":
-    app.run(debug=True,host="0.0.0.0",port=8000)
+    app.run(debug=True)
