@@ -158,7 +158,7 @@ const sendData_study = () => {
   })
 };
 const sendData_relax = () => {
-  sendHttpRequest('POST', '/color', 6, {
+  sendHttpRequest('POST', '/light', 6, {
   })
 };
 open_1.addEventListener('click', sendData_open);
