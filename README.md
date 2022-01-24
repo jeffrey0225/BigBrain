@@ -1,5 +1,5 @@
 Arduino --> 注意事項<br> 
-    1. 版子要選對<br> 
+<n> 1. 版子要選對<br> 
     2. 使用 ESP32 需要到偏好設定的額外額外的開發版管理員網址<br> 
        新增 https://dl.espressif.com/dl/package_esp32_index.json 才能下載版子<br>
        (ESP8266 http://arduino.esp8266.com/stable/package_esp8266com_index.json)<br> 
