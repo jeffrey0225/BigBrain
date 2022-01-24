@@ -32,8 +32,7 @@ Web --> 注意事項<br>
 
 MQTT --><br> 
    教學網址 --> https://swf.com.tw/?p=1002<br> 
-   appinventor 擴充功能 --><br>  
-      https://ullisroboterseite.de/android-AI2-PahoDown.html<br> 
+   appinventor 擴充功能 -->  https://ullisroboterseite.de/android-AI2-PahoDown.html<br> 
 
 專題步驟 --><br> 
    1.先寫簡單的程式來測試library<br> 
