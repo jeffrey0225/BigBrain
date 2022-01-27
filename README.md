@@ -4,7 +4,8 @@ Arduino --> 注意事項<br>
        新增 https://dl.espressif.com/dl/package_esp32_index.json 才能下載版子<br>
        (ESP8266 http://arduino.esp8266.com/stable/package_esp8266com_index.json)<br> 
     3. 有bug時記得先看錯誤訊息，常見錯誤（ 少分號、少誇號、資料型態錯誤 <br> 
-    4. RTOS 請上yt查詢 Digi-key 第一部和第二部<br> 
+    4. RTOS 請上yt查詢 Digi-key 第一部和第二部<br>
+    * 可以參考我給予的程式碼做運用 
     * HTTP-Client.h 要是使用本地端架設網站的同時又begin在同個ip和port會崩潰，詳情詢問沅洋<br> 
 
 Web --> 注意事項<br> 
