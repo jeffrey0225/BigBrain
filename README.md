@@ -30,6 +30,10 @@ Web --> 注意事項<br>
       先搞懂 http 運作原理<br> 
       再來學習Flask --> https://youtu.be/Z1RJmh_OqeA<br> 
 
+Heroku注意事項--><br>
+檔案名稱"Procfile"要全部一致，只要不一樣就不能執行，要是開啟heroku時出現錯誤，再安裝一次gunicorn，<br>
+要是還有問題請看錯誤訊息（依照它給予的指令複製到終端機）<br>
+
 MQTT --><br> 
    教學網址 --> https://swf.com.tw/?p=1002<br> 
    appinventor 擴充功能 -->  https://ullisroboterseite.de/android-AI2-PahoDown.html<br> 
